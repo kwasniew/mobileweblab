@@ -1,1 +1,90 @@
-Start
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nowoczesny (Mobile) Web Development - Instrukcje do laboratorium</title>
+    </head>
+    <body>
+        <h1>Nowoczesny (Mobile) Web Development</h1>
+        <p>Podczas laboratoriów będziemy budować wyszukiwarkę kontaktów z możliwością filtrowania po numerze telefonu i imieniu</p>
+        <h2>Lista kroków</h2>
+        <ol>
+            <li>Instalacja Chrome</li>
+            <li>Instalacja node.js</li>
+            <li>Hello node.js
+                <ul>
+                    <li>Tworzymy plik app.js</li>
+                    <li><a href="http://howtonode.org/hello-node">Hello world</a></li>
+                    <li>Omówienie kodu programu</li>
+                    <li>node app.js</li>
+                    <li>Sprawdzamy <a href="http://localhost:8000/">localhost</a></li>
+                </ul>
+            </li>
+            <li>Zwracamy listę kontaktów
+                <ul>
+                    <li><a href="http://kwasniew.github.io/mobileweblab/contacts.json">Dane do zadania</a></li>
+                    <li>Listę kontaktów kopiujemy do kodu programu</li>
+                    <li>Zwracamy listę kontaktów zamiast Hello World</li>
+                    <li>Przydatne: Content Type: application/json</li>
+                    <li>Przydatne: JSON.stringify()</li>
+                </ul>
+            </li>
+            <li>Formularz do wyszukiwania nowych kontaktów
+                <ul>
+                    <li><a href="http://expressjs.com/">express.js</a></li>
+                    <li>npm - node package manager</li>
+                    <li>npm install express</li>
+                    <li>express.static()</li>
+                    <li>static index.html</li>
+                    <li>app.get('/contacts')</li>
+                    <li>formularz z polami name (input=text) i phone (input=tel)</li>
+                </ul>
+            </li>
+            <li>Pobieranie wszystkich kontaktów bez filtrowania
+                <ul>
+                    <li>zepto.js</li>
+                    <li>$.getJSON()</li>
+                    <li><a href="http://kwasniew.github.io/mobileweblab/template.html">Szablon do kontaktów (HTML)</a></li>
+                    <li><a href="http://kwasniew.github.io/mobileweblab/template.js">Szablon do kontaktów (JS)</a></li>
+                    <li>Wypełniamy szablon danymi z serwera</li>
+                </ul>
+            </li>
+            <li>Filtrowanie kontaktów
+                <ul>
+                    <li>Pobieranie kontaków przy wpisywaniu danych do formularza (on('input'))</li>
+                    <li>Wysyłanie query parameters (name i tel) do serwera (val() i req.query.paramName)</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a></li>
+                    <li>Implementacja filtrowania: REPL driven development</li>
+                </ul>
+            </li>
+            <li>Stylowanie
+                <ul>
+                    <li>Testowanie na telefonie w emulatorze (Chrome Dev Tools)</li>
+                    <li>viewport</li>
+                    <li><a href="http://getbootstrap.com/">bootstrap</a></li>
+                    <li>body class='container'</li>
+                    <li><a href="http://getbootstrap.com/css/#forms">boostrap forms</a></li>
+                </ul>
+            </li>
+            <li>Czyszczenie kodu JS
+                <ul>
+                    <li>selektory DOM w zmiennych</li>
+                    <li>duplikacja w budowaniu URL</li>
+                    <li>duplikacja w getJSON</li>
+                    <li>on filter change</li>
+                    <li>on contacts data</li>
+                    <li>osobny plik filter.js</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Odnośniki</h2>
+        <ul>
+            <li><a href="http://www.youtube.com/watch?v=Bw1dgUS27uE">DOM templating</a></li>
+            <li><a href="http://martinfowler.com/bliki/SegregatedDOM.html">Segregated DOM 1</a></li>
+            <li><a href="http://programming.oreilly.com/2014/01/keeping-jquery-in-check.html">Segregated DOM 2</a></li>
+            <li><a href="http://blog.jayfields.com/2014/01/repl-driven-development.html">REPL driven development</a></li>
+            <li><a href="http://lizkeogh.com/2012/06/24/beyond-test-driven-development/">Spike and stabilize</a></li>
+        </ul>
+    </body>
+</html>
