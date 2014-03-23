@@ -11,9 +11,9 @@
         <ol>
             <li>Hello node.js
                 <ul>
-                    <li>Instalacja node.js</li>
+                    <li><a href="http://nodejs.org/download/">Instalacja node.js</a></li>
                     <li>Tworzymy plik app.js</li>
-                    <li><a href="http://howtonode.org/hello-node">Hello world</a></li>
+                    <li><a href="http://nodejs.org/">Hello world</a></li>
                     <li>Omówienie kodu programu</li>
                     <li>node app.js</li>
                     <li>Sprawdzamy <a href="http://localhost:8000/">localhost</a></li>
@@ -41,8 +41,9 @@
             </li>
             <li>Pobieranie wszystkich kontaktów bez filtrowania
                 <ul>
-                    <li>zepto.js</li>
+                    <li>jQuery/zepto.js (DOM - zdarzenia, inspekcja, manipulacja + AJAX)</li>
                     <li>$.getJSON()</li>
+                    <li>DOM templating</li>
                     <li><a href="http://kwasniew.github.io/mobileweblab/template.html">Szablon do kontaktów (HTML)</a></li>
                     <li><a href="http://kwasniew.github.io/mobileweblab/template.js">Szablon do kontaktów (JS)</a></li>
                     <li>Wypełniamy szablon danymi z serwera</li>
@@ -52,17 +53,17 @@
                 <ul>
                     <li>Pobieranie kontaków przy wpisywaniu danych do formularza (on('input'))</li>
                     <li>Wysyłanie query parameters (name i tel) do serwera (val() i req.query.paramName)</li>
-                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a></li>
+                    <li>Filtrowanie danych po stronie serwera z użyciem <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a></li>
                     <li>Implementacja filtrowania: REPL driven development</li>
                 </ul>
             </li>
             <li>Stylowanie
                 <ul>
                     <li>Testowanie na telefonie lub w emulatorze (Chrome Dev Tools)</li>
-                    <li>viewport</li>
-                    <li><a href="http://getbootstrap.com/">bootstrap</a></li>
+                    <li>Ustawienia viewport dla urządzeń mobilnych</li>
+                    <li>Stylowanie z <a href="http://getbootstrap.com/">bootstrap</a></li>
                     <li>body class='container'</li>
-                    <li><a href="http://getbootstrap.com/css/#forms">boostrap forms</a></li>
+                    <li><a href="http://getbootstrap.com/css/#forms">boostrap forms</a> - czytelny formularz</li>
                 </ul>
             </li>
             <li>Czyszczenie kodu JS
@@ -72,8 +73,10 @@
                     <li>duplikacja w getJSON</li>
                     <li>on filter change</li>
                     <li>on contacts data</li>
+                    <li>Single Responsibility Principle</li>
                     <li>osobny plik filter.js</li>
                     <li>module pattern</li>
+                    <li>warstwy</li>
                 </ul>
             </li>
         </ol>
@@ -85,6 +88,7 @@
             <li><a href="http://programming.oreilly.com/2014/01/keeping-jquery-in-check.html">Segregated DOM 2</a></li>
             <li><a href="http://blog.jayfields.com/2014/01/repl-driven-development.html">REPL driven development</a></li>
             <li><a href="http://lizkeogh.com/2012/06/24/beyond-test-driven-development/">Spike and stabilize</a></li>
+            <li><a href="http://code.danyork.com/2011/01/25/node-js-doctors-offices-and-fast-food-restaurants-understanding-event-driven-programming/">Non-blocking I/O</a></li>
         </ul>
     </body>
 </html>
