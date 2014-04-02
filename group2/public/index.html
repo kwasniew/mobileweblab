@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>Title jest wymagany</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body class='container'>
+<form>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" class="form-control"/>
+
+    <label for="tel">Tel</label>
+    <input type="tel" name="tel" id="tel" class="form-control"/>
+</form>
+
+<section id="contacts">
+    <h2>Contacts</h2>
+    <ul>
+
+    </ul>
+</section>
+
+<section id="templates" style="display: none !important;">
+    <li class="contact">
+        <span class="name"></span>
+        <span class="tel"></span>
+    </li>
+</section>
+
+
+<script src="http://zeptojs.com/zepto.min.js"></script>
+<script>
+
+    /* DOM inspection */
+    /* DOM manipulation */
+    /* DOM events */
+    /* AJAX */
+
+    var presentationLayer = {
+        /* DOM manipulation */
+        /* DOM inspection */
+        addContactItem: function addContactItem(contact) {
+            var container = $('#contacts ul'),
+                    itemTemplate = $('#templates .contact');
+
+            var newItem = itemTemplate.clone().appendTo(container);
+            newItem.find('.name').text(contact.name);
+            newItem.find('.tel').text(contact.tel);
+        },
+
+        /* DOM manipulation */
+        setContacts: function setContacts(contacts) {
+            $('#contacts ul').empty();
+            contacts.forEach(presentationLayer.addContactItem);
+        },
+
+        /* DOM inspection */
+        getFilterFields: function getFilterFields() {
+            return {
+                name: $("#name").val(),
+                tel: $("#tel").val()
+            }
+        },
+
+        /* DOM events */
+        onNameFilterChange: function onNameFilterChange(callback) {
+            $("#name").on("input", callback);
+        },
+
+        /* DOM events */
+        onTelFilterChange: function onTelFilterChange(callback) {
+            $("#tel").on("input", callback);
+        }
+    };
+
+    var serverCommunicationLayer = {
+        /* AJAX */
+        getContactsFromServer: function getContactsFromServer(filteredFields, callback) {
+            var name = filteredFields.name;
+            var tel = filteredFields.tel;
+            $.getJSON('/contacts?name=' + name + "&tel=" + tel, function (contacts) {
+                callback(contacts);
+            });
+        }
+    };
+
+    var businessLogicLayer = {};
+
+
+    /* glue code */
+    presentationLayer.onNameFilterChange(function() {
+        businessLogicLayer.validateNameField(presentationLayer.);
+        getContacts();
+    });
+    presentationLayer.onTelFilterChange(getContacts);
+
+    function getContacts() {
+        serverCommunicationLayer.getContactsFromServer(presentationLayer.getFilterFields(), presentationLayer.setContacts);
+    }
+
+
+</script>
+</body>
+</html>

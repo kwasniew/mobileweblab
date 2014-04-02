@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body class='container'>
+<form>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" class="form-control"/>
+
+    <label for="tel">Tel</label>
+    <input type="tel" name="tel" id="tel" class="form-control"/>
+</form>
+
+<section id="contacts">
+    <h2>Contacts</h2>
+    <ul>
+
+    </ul>
+</section>
+
+<section id="templates" style="display: none !important;">
+    <li class="contact">
+        <span class="name"></span>
+        <span class="tel"></span>
+    </li>
+</section>
+
+<script src="http://zeptojs.com/zepto.min.js"></script>
+<script>
+    function addContactItem(contact) {
+        var container = $('#contacts ul'),
+                itemTemplate = $('#templates .contact');
+
+        var newItem = itemTemplate.clone().appendTo(container);
+        newItem.find('.name').text(contact.name);
+        newItem.find('.tel').text(contact.tel);
+    }
+
+    function setContacts(contacts) {
+        $('#contacts ul').empty();
+        contacts.forEach(addContactItem);
+    }
+
+    $("#name").on("input", function() {
+        getContacts();
+    });
+
+    $("#tel").on("input", function() {
+        getContacts();
+    });
+
+    function getContacts() {
+        var name = $("#name").val();
+        var tel = $("#tel").val();
+        $.getJSON('/contacts?name='+ name+'&tel='+ tel, function(data){
+            setContacts(data);
+        });
+    }
+
+
+</script>
+</body>
+</html>
